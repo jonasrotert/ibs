@@ -1,0 +1,37 @@
+.front-page {
+  margin: @margin-m 0;
+
+  .news {
+    .newsitem {
+      display: flex;
+      flex-direction: row;
+
+      .thumbnail {
+        margin-right: @margin-m;
+
+        img {
+          max-height: 100px;
+          width: auto;
+        }
+      }
+
+      .excerpt {
+        vertical-align: top;
+        padding: @padding-s 0;
+
+        h1 {
+          margin: 0;
+          color: @color-brand;
+          font-size: @font-size-m;
+          font-weight: 500;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+
+}
