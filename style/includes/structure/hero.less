@@ -1,7 +1,70 @@
 .hero {
   background-color: @background-color-hero;
+  background-image: url('../img/stage.png');
+  background-repeat: repeat;
 
   img {
     display: table-cell;
+  }
+}
+
+.slider {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  white-space: nowrap;
+
+  button.prev {
+    margin: -20px 0 -20px 20px;
+  }
+
+  button.next {
+    margin: -20px 20px -20px 0;
+    right: 0;
+  }
+
+  button {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    top: 50%;
+    transition: all 0.2s ease-in;
+    padding: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    z-index: 10;
+
+    i.mdi {
+      color: rgba(255, 255, 255, 1);
+      font-size: @font-size-m;
+    }
+  }
+
+  &:hover button {
+    opacity: 1;
+  }
+
+  .slide {
+    transition: all 2s ease-in-out;
+    display: inline-block;
+    position: static;
+
+    img {
+      display: block;
+      width: @page-width;
+    }
+  }
+}
+
+stage.map {
+  iframe {
+    display: inherit;
   }
 }

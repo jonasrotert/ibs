@@ -1,0 +1,30 @@
+.color-band {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 5px;
+
+  section {
+    flex-grow: 1;
+
+    &.orange {
+      background-color: #f78f37;
+    }
+
+    &.blue {
+      background-color: #cfd3d0;
+    }
+
+    &.gray {
+      background-color: #585b5c;
+    }
+
+    &.green {
+      background-color: #4a9876;
+    }
+  }
+}

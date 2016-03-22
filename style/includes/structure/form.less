@@ -1,0 +1,165 @@
+.front-page .search-form {
+  .card;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 @padding-s;
+  margin-bottom: @margin-l;
+
+  i {
+    font-size: @font-size-l;
+    color: @color-font-light;
+  }
+
+  input {
+    padding: @padding-s;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+  }
+}
+
+.search-page {
+  .search-form {
+    .contact;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: @margin-xl;
+
+    i {
+      padding-left: @padding-s;
+      background-color: #fff;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      font-size: @font-size-l;
+      color: @color-font-light;
+    }
+
+    input {
+      padding: @padding-s;
+      border: none;
+      outline: none;
+      flex-grow: 1;
+    }
+  }
+
+  .search-result {
+    margin-bottom: @margin-xl;
+    p {
+      margin: 0;
+    }
+
+    header {
+      margin: 0 0 @margin-s;
+
+      a {
+        color: @color-brand;
+        font-weight: 500;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+form {
+  .hp-wrap {
+    display: none;
+  }
+
+  .ninja-forms-required-items {
+    font-size: @font-size-s;
+    color: @color-font-light;
+  }
+
+  .field-wrap {
+    margin: @margin-l 0 0;
+
+    label {
+      display: block;
+      font-size: @font-size-s;
+      margin: 0 0 @margin-xs;
+    }
+
+    input:not([type="button"]), input:not([type="submit"]), input:not([type="checkbox"]), input:not([type="radiobox"]), select, textarea {
+      padding: @padding-xs;
+      display: inline-block;
+      width: 100%;
+      border: 1px solid #e0e0e0;
+    }
+
+    button, input[type="submit"], input[type="button"] {
+      .button;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+}
+
+.ninja-forms-response-msg {
+  margin: @margin-xs 0 @margin-s;
+}
+
+.ninja-forms-field-error, .ninja-forms-error-msg {
+  display: inline-block;
+  color: red;
+  vertical-align: top;
+}
+
+.ninja-forms-success-msg {
+  display: inline-block;
+  color: green;
+  vertical-align: top;
+}
+
+a.btn, a.button, button, input[type="submit"], input[type="button"] {
+  .button;
+}
+
+.button() {
+  display: inline-block;
+  text-align: center;
+  line-height: normal;
+  vertical-align: baseline;
+  margin: 0 @margin-s 0 0;
+  text-decoration: none;
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  padding: @padding-s @padding-xl;
+  color: @color-font-normal;
+  width: auto;
+
+  &.dark:hover, &:hover, &.light:hover {
+    background-color: darken(#eee, 5%);
+    color: @color-font-normal;
+  }
+
+  &.dark:focus, &:focus, &.light:focus {
+    background-color: darken(#eee, 10%);
+    outline: 1px dotted @color-font-light;
+  }
+
+  &.dark {
+    background-color: @background-color-hero;
+    color: #fff;
+  }
+
+  &.green {
+    background-color: @color-brand;
+    color: #fff;
+
+    &:hover {
+      background-color: lighten(@color-brand, 10%);
+    }
+
+    &:focus {
+      background-color: darken(@color-brand, 10%);
+    }
+  }
+}

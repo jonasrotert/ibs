@@ -1,68 +1,101 @@
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+.column(@width, @min-width) {
   width: 100%;
-  max-width: 70rem;
+  display: block;
+  margin: 0 @margin-l @margin-l 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: @min-width) {
+    width: @width*100/12%;
+  }
+}
+
+.columns(@min-width) {
+  & > .col-1 {
+    .column(1, @min-width);
+  }
+
+  & > .col-2 {
+    .column(2, @min-width);
+  }
+
+  & > .col-3 {
+    .column(3, @min-width);
+  }
+
+  & > .col-4 {
+    .column(4, @min-width);
+  }
+
+  & > .col-5 {
+    .column(5, @min-width);
+  }
+
+  & > .col-6 {
+    .column(6, @min-width);
+  }
+
+  & > .col-7 {
+    .column(7, @min-width);
+  }
+
+  & > .col-8 {
+    .column(8, @min-width);
+  }
+
+  & > .col-9 {
+    .column(9, @min-width);
+  }
+
+  & > .col-10 {
+    .column(10, @min-width);
+  }
+
+  & > .col-11 {
+    .column(11, @min-width);
+  }
+
+  & > .col-12 {
+    .column(12, @min-width);
+  }
+}
+
+.row {
+  width: 100%;
+  max-width: @page-width;
   margin: 0 auto;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-.col-1 {
-  display: inline-block;
-  width: 1*100/12%;
-}
+  &.xs {
+    .columns(0);
+    flex-direction: row;
+  }
 
-.col-2 {
-  display: inline-block;
-  width: 2*100/12%;
-}
+  &.sm {
+    .columns(@screen-sm-min);
+    @media (min-width: @screen-sm-min) {
+      flex-direction: row;
 
-.col-3 {
-  display: inline-block;
-  width: 3*100/12%;
-}
+    }
+  }
 
-.col-4 {
-  display: inline-block;
-  width: 4*100/12%;
-}
+  &.md {
+    .columns(@screen-md-min);
+    @media (min-width: @screen-md-min) {
+      flex-direction: row;
 
-.col-5 {
-  display: inline-block;
-  width: 5*100/12%;
-}
+    }
+  }
 
-.col-6 {
-  display: inline-block;
-  width: 6*100/12%;
-}
+  &.lg {
+    .columns(@screen-lg-min);
+    @media (min-width: @screen-lg-min) {
+      flex-direction: row;
 
-.col-7 {
-  display: inline-block;
-  width: 7*100/12%;
-}
-
-.col-8 {
-  display: inline-block;
-  width: 8*100/12%;
-}
-
-.col-9 {
-  display: inline-block;
-  width: 9*100/12%;
-}
-
-.col-10 {
-  display: inline-block;
-  width: 10*100/12%;
-}
-
-.col-11 {
-  display: inline-block;
-  width: 11*100/12%;
-}
-
-.col-12 {
-  display: inline-block;
-  width: 12*100/12%;
+    }
+  }
 }

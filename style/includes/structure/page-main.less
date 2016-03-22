@@ -1,0 +1,45 @@
+.page-main {
+  background-color: @background-color-body;
+  padding: @padding-l @padding-m @padding-m;
+
+  .page-title {
+    padding: @padding-s 0;
+    font-size: @font-size-l;
+    font-weight: 500;
+    color: @color-brand;
+
+    &.thumbnail {
+      height: 300px;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      position: relative;
+      margin-bottom: 2*@margin-m;
+
+      .title {
+        background-color: #fff;
+        position: absolute;
+        display: block;
+        padding: 10px 100px 10px 20px;
+        left: 0;
+        bottom: 20px;
+        box-shadow: 20px 0 50px -12px #333;
+
+        &::after {
+          display: none;
+          content: '';
+          background-color: transparent;
+          position: absolute;
+          right: 0;
+          margin-top: 10px;
+          border-width: 0 0 20px 20px;
+          border-style: solid;
+          border-color: transparent #fff;
+          width: 0;
+          height: 0;
+        }
+      }
+
+    }
+  }
+}
