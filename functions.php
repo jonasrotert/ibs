@@ -18,3 +18,8 @@ require_once(get_template_directory() . '/includes/breadcrumbs.php');
 remove_filter('pre_user_description', 'wp_filter_kses');
 
 add_filter('gallery_style', create_function('$a', 'return "<div class=\'gallery\'>";'));
+
+add_action( 'after_setup_theme', 'register_my_menu' );
+function register_my_menu() {
+    register_nav_menu( 'Main', __( 'Primary Menu', 'ibs' ) );
+}

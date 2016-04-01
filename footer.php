@@ -21,7 +21,7 @@
     <section class="part last-modified">
         <section class="row sm">
             <section class="col-8">
-                Letzte Änderung: <?php the_modified_date(); ?> | Verantwortlich: <?php the_modified_author(); ?>
+                <?php pll_e('Letzte Änderung:') ?>&nbsp;<?php the_modified_date(); ?>&nbsp;|&nbsp;<?php pll_e('Verantwortlich:') ?>&nbsp;<?php the_modified_author(); ?>
             </section>
             <section class="col-4">
                 <?php wp_nav_menu(array(
@@ -49,7 +49,7 @@
     System.import('script/boot.js').then(null, console.error.bind(console));
 </script>
 <section class="dialogwrapper">
-    <section class="background"></section>
+    <section class="background" title="<?php pll_e('Klicken Sie hier, um das Fenster zu schließen.') ?>"></section>
     <section class="dialog"></section>
 </section>
 </body>

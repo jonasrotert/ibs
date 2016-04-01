@@ -9,10 +9,10 @@
                     foreach ($postslist as $post) :
                         setup_postdata($post); ?>
                         <section class="newsitem row xs">
-                            <section class="thumbnail col-4" style="background-image: url('<?php if (has_post_thumbnail()) the_post_thumbnail_url(); ?>')">
+                            <section class="thumbnail col-3" style="background-image: url('<?php if (has_post_thumbnail()) the_post_thumbnail_url(); ?>')">
                                 <a href="<?php the_permalink(); ?>"></a>
                             </section>
-                            <section class="excerpt col-8">
+                            <section class="excerpt col-9">
                                 <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                                 <p><?php the_excerpt(); ?></p>
                             </section>
@@ -23,13 +23,13 @@
                     ?>
                     <hr/>
                     <section class="more">
-                        <a href="/category/presse"><i class="mdi mdi-chevron-right"></i>Mehr Neuigkeiten</a>&nbsp;<a href="/veranstaltungskalender"><i class="mdi mdi-chevron-right"></i>Veranstaltungskalender</a>
+                        <a href="/category/presse"><i class="mdi mdi-chevron-right"></i><?php pll_e('Mehr Neuigkeiten') ?></a>&nbsp;<a href="/<?php pll_e('Veranstaltungskalender') ?>"><i class="mdi mdi-chevron-right"></i><?php pll_e('Veranstaltungskalender') ?></a>
                     </section>
                 </section>
             </section>
             <section class="col-4">
                 <form action="/" method="get" class="search-form">
-                    <i class="mdi mdi-magnify"></i><input type="search" name="s" id="search" placeholder="Suchbegriff"/>
+                    <i class="mdi mdi-magnify"></i><input type="search" name="s" id="search" placeholder="<?php pll_e('Suchbegriff') ?>"/>
                 </form>
                 <?php if (is_active_sidebar('frontpage-sidebar')) dynamic_sidebar('frontpage-sidebar'); ?>
             </section>

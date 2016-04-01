@@ -36,9 +36,19 @@ function shortcode_twitter($atts, $content = null)
     return $content;
 }
 
+function shortcode_panel($atts, $content = null)
+{
+    extract(shortcode_atts(array(
+        'title' => '',
+        'align' => 'r',
+    ), $atts));
+    return "<section class=\"panel ".$align."\"><section class='panel-header'>" . $title . "</section><main>" . do_shortcode($content) . "</main></section>";
+}
+
 function register_shortcodes()
 {
     add_shortcode('mail', 'shortcode_mail');
     add_shortcode('twitter', 'shortcode_twitter');
     add_shortcode('teaser', 'shortcode_teaser');
+    add_shortcode('panel', 'shortcode_panel');
 }

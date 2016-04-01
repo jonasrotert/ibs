@@ -2,7 +2,7 @@ export class Dialog {
     private backgroundElement:HTMLElement;
     private dialogElement:HTMLElement;
 
-    constructor(src:string) {
+    constructor(src:string, caption) {
         this.backgroundElement = <HTMLElement>document.querySelector(".dialogwrapper>.background");
         this.dialogElement = <HTMLElement>document.querySelector(".dialogwrapper>.dialog");
         this.backgroundElement.addEventListener("click", () => this.close());
@@ -10,10 +10,14 @@ export class Dialog {
         this.clear();
 
         var imgElem = document.createElement("img");
+        var captionElement = document.createElement("p");
+        captionElement.classList.add("caption");
+        captionElement.innerText = caption;
 
         imgElem.setAttribute("src", src);
 
         this.dialogElement.appendChild(imgElem);
+        this.dialogElement.appendChild(captionElement);
     }
 
     private clear():void {

@@ -1,10 +1,24 @@
-.contact {
+.contact, .panel {
   .card;
   background-color: #eee;
   font-size: @font-size-s;
+  display: inline-block;
+  width: auto;
 
-  .contact-header {
+  .contact-header, .panel-header {
     font-size: @font-size-m;
     font-weight: 500;
+  }
+
+  &.r {
+    float: right;
+    clear: right;
+    margin: @margin-m 0 @margin-m @margin-m;
+  }
+
+  &.l {
+    float: left;
+    clear: left;
+    margin: @margin-m @margin-m @margin-m 0;
   }
 }

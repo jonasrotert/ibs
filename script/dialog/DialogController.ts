@@ -9,12 +9,12 @@ export class DialogController {
 
     private setEventListeners(imgElems:[HTMLDivElement]):void {
         imgElems.forEach((imgElem) => {
-            imgElem.addEventListener("click", () => this.openDialog(imgElem.getAttribute("src")));
+            imgElem.addEventListener("click", () => this.openDialog(imgElem.getAttribute("src"), imgElem.getAttribute("caption")));
         });
     }
 
-    private openDialog(src:string) {
-        this.currentDialog = new Dialog(src);
+    private openDialog(src:string, caption:string) {
+        this.currentDialog = new Dialog(src, caption);
         this.currentDialog.open();
     }
 
@@ -31,6 +31,15 @@ export class DialogController {
             divElem.style.backgroundImage = "url('" + imgElem.src + "')";
             divElem.classList.add("thumbnail");
             divElem.setAttribute("src", imgElem.src);
+
+            var caption:string = null;
+            divElem.setAttribute("caption", "");
+            if (dtElement.nextElementSibling) {
+                if ((<HTMLElement>dtElement.nextElementSibling).tagName == "P") {
+                    caption = (<HTMLElement>dtElement.nextElementSibling).innerText;
+                    divElem.setAttribute("caption", caption.trim());
+                }
+            }
 
             dtElement.appendChild(divElem);
             aElement.remove();

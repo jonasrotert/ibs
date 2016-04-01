@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <link href="<?php echo bloginfo('template_url'); ?>/style.css" rel="stylesheet"/>
     <?php wp_head(); ?>
+    <!-- Favicon -->
+    <?php include_once "favicon/favicon.php"; ?>
 </head>
 
 <?php if (is_front_page() && is_home()) : ?>
@@ -18,13 +20,23 @@
         <section class="brand">
             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <section class="logo">
-                    <img src="<?php echo bloginfo('template_url'); ?>/img/logo.png" alt="Stiftung IBS" aria-label="Stiftung IBS" name="Stiftung IBS"/>
+                    <img src="<?php echo bloginfo('template_url'); ?>/img/logo.png" alt="<?php pll_e("Stiftung IBS"); ?>" aria-label="<?php pll_e("Stiftung IBS"); ?>" name="<?php pll_e("Stiftung IBS"); ?>"/>
                 </section>
                 <section class="title">
-                    <span>Stiftung Internationales Informatik-</span><br/>
-                    <span>und Begegnungszentrum Sachsen</span>
+                    <span><?php pll_e("Brand - Part 1"); ?></span><br/>
+                    <span><?php pll_e("Brand - Part 2"); ?></span>
                 </section>
             </a>
+        </section>
+        <section class="puffer">
+        </section>
+        <section class="more">
+            <i class="mdi mdi-earth"></i>
+            <?php wp_nav_menu(array(
+                'menu' => 'Language',
+                'container' => 'nav',
+                'container_class' => 'lang'
+            )); ?>
         </section>
     </section>
 </header>
@@ -57,7 +69,7 @@
 </nav>
 <nav class="page-nav mobile">
     <section class="row">
-        <section><i class="toggle mdi mdi-menu"/></i><span class="toggle-label">Menü</span></section>
+        <section><i class="toggle mdi mdi-menu"/></i><span class="toggle-label"><?php pll_e("Menü"); ?></span></section>
         <?php wp_nav_menu(array(
             'menu' => 'Main',
             'container' => '',
